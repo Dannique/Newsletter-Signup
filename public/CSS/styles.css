@@ -41,17 +41,22 @@ h1 {
 }
 
 .top {
-  margin-bottom: -1px;
+  margin-bottom: 5px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 .middle {
   border-radius: 0;
+  margin-bottom: 5px;
 }
 
 .bottom {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.copyright {
+  padding-top:100px;
+  opacity: 50%;
 }

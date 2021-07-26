@@ -18,11 +18,13 @@ mailchimp.setConfig({
   server: "us2"
 });
 
-app.get("/", function (req, res) {
+app.route("/")
+
+.get((req, res) => {
   res.sendFile(__dirname + "/signup.html");
 })
 
-app.post("/", function (req, res) {
+.post( (req, res) => {
   const fName = req.body.fName;
   const lName = req.body.lName;
   const email = req.body.email;
@@ -47,7 +49,7 @@ app.post("/", function (req, res) {
     auth: process.env.AUTH
   }
 
-  const request = https.request(url, options, function (response) {
+  const request = https.request(url, options, (response) => {
     response.statusCode == 200 ? res.sendFile(__dirname + "/success.html") :
       res.sendFile(__dirname + "/failure.html");
 
@@ -59,10 +61,10 @@ app.post("/", function (req, res) {
   request.end();
 })
 
-app.post("/failure", function (req, res) {
+app.post("/failure", (req, res) => {
   res.redirect("/")
 });
 
-app.listen(process.env.PORT || 3000, function () {
+app.listen(process.env.PORT || 3000, () => {
   console.log("running.");
 });
